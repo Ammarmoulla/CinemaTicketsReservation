@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  django-app:
+    image:
+    container_name: django-app-continer
+    env_file:
+      - ./.env
+    build: .
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    entrypoint: ./start.sh
+
+
